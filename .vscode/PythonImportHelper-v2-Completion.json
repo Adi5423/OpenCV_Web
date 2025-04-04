@@ -1,0 +1,184 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "torchvision.models.segmentation",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torchvision.models.segmentation",
+        "description": "torchvision.models.segmentation",
+        "detail": "torchvision.models.segmentation",
+        "documentation": {}
+    },
+    {
+        "label": "add_cors_headers",
+        "kind": 2,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "def add_cors_headers(response):\n    response.headers['Access-Control-Allow-Origin'] = '*'\n    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'\n    return response\n@app.route(\"/\")\ndef home():\n    return render_template(\"index.html\")\n@app.route(\"/process\", methods=[\"POST\"])\ndef process():\n    try:",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "def home():\n    return render_template(\"index.html\")\n@app.route(\"/process\", methods=[\"POST\"])\ndef process():\n    try:\n        if 'image' not in request.files:\n            return jsonify({\"error\": \"No file uploaded\"}), 400\n        file = request.files['image']\n        if file.filename == '':\n            return jsonify({\"error\": \"No selected file\"}), 400",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "process",
+        "kind": 2,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "def process():\n    try:\n        if 'image' not in request.files:\n            return jsonify({\"error\": \"No file uploaded\"}), 400\n        file = request.files['image']\n        if file.filename == '':\n            return jsonify({\"error\": \"No selected file\"}), 400\n        filter_type = request.form.get('filter', 'grayscale')\n        # Convert image to OpenCV format\n        npimg = np.frombuffer(file.read(), np.uint8)",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "app = Flask(__name__, \n            template_folder=\"../frontend\", \n            static_folder=\"../frontend\",\n            static_url_path=\"\")\n# Use absolute path for upload folder in project root\nUPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\", \"static\"))\nif not os.path.exists(UPLOAD_FOLDER):\n    os.makedirs(UPLOAD_FOLDER, exist_ok=True)\n@app.after_request\ndef add_cors_headers(response):",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "UPLOAD_FOLDER",
+        "kind": 5,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\", \"static\"))\nif not os.path.exists(UPLOAD_FOLDER):\n    os.makedirs(UPLOAD_FOLDER, exist_ok=True)\n@app.after_request\ndef add_cors_headers(response):\n    response.headers['Access-Control-Allow-Origin'] = '*'\n    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'\n    return response\n@app.route(\"/\")\ndef home():",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "segment_person",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def segment_person(image):\n    \"\"\"Returns a binary mask where the person is detected.\"\"\"\n    preprocess = transforms.Compose([\n        transforms.ToPILImage(),\n        transforms.Resize((520, 520)),\n        transforms.ToTensor(),\n        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])\n    ])\n    input_tensor = preprocess(image).unsqueeze(0)\n    with torch.no_grad():",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "blur_background",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def blur_background(image_path, save_path=\"blurred_bg.jpg\"):\n    \"\"\"Blurs the background of a person in the given image and saves the result.\"\"\"\n    image = cv2.imread(image_path)\n    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\n    # Get person segmentation mask\n    mask = segment_person(image_rgb)\n    # Resize mask to match original image size\n    mask = cv2.resize(mask, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST)\n    # Blur the entire image\n    blurred = cv2.GaussianBlur(image, (35, 35), 0)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "model = models.deeplabv3_resnet101(pretrained=True).eval()\ndef segment_person(image):\n    \"\"\"Returns a binary mask where the person is detected.\"\"\"\n    preprocess = transforms.Compose([\n        transforms.ToPILImage(),\n        transforms.Resize((520, 520)),\n        transforms.ToTensor(),\n        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])\n    ])\n    input_tensor = preprocess(image).unsqueeze(0)",
+        "detail": "test",
+        "documentation": {}
+    }
+]

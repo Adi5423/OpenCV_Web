@@ -187,6 +187,82 @@
                             "actionType": "Idle"
                         }
                     ]
+                },
+                {
+                    "date": "Fri Apr 04 2025",
+                    "sessions": [
+                        {
+                            "sessionInfo": {
+                                "id": "c27e8592-13e5-455e-9a9e-9fee353767ee",
+                                "duration": 572986,
+                                "idle": 5325797,
+                                "state": "Idle",
+                                "durations": [
+                                    {
+                                        "id": "dfa47900-08b1-4ab8-8006-b9f7c5d02f84",
+                                        "state": "Idle",
+                                        "begin": 1743766783028,
+                                        "end": 1743766783028,
+                                        "duration": 0
+                                    },
+                                    {
+                                        "id": "6b9d8f08-7a5b-4bd8-871a-7db375a0d04c",
+                                        "state": "Ongoing",
+                                        "begin": 1743766486191,
+                                        "end": 1743766783028,
+                                        "duration": 296837
+                                    },
+                                    {
+                                        "id": "995d6e0b-ae14-41bc-8b73-4dd37c097365",
+                                        "state": "Idle",
+                                        "begin": 1743766483028,
+                                        "end": 1743766486191,
+                                        "duration": 3163
+                                    },
+                                    {
+                                        "id": "400d266c-9287-4c96-9081-93e6cd2629f7",
+                                        "state": "Ongoing",
+                                        "begin": 1743766414516,
+                                        "end": 1743766483028,
+                                        "duration": 68512
+                                    },
+                                    {
+                                        "id": "6fe855af-1107-4e7d-be22-619ccff868a1",
+                                        "state": "Idle",
+                                        "begin": 1743766183020,
+                                        "end": 1743766414516,
+                                        "duration": 231496
+                                    },
+                                    {
+                                        "id": "666e10c9-2bd5-4f09-a80b-4d7be7a4aca7",
+                                        "state": "Ongoing",
+                                        "begin": 1743765981155,
+                                        "end": 1743766183020,
+                                        "duration": 201865
+                                    },
+                                    {
+                                        "id": "821e4a83-c2fd-4e2d-92e5-1e6c20c81a18",
+                                        "state": "Idle",
+                                        "begin": 1743764865636,
+                                        "end": 1743765981155,
+                                        "duration": 1115519
+                                    },
+                                    {
+                                        "id": "df133659-eabd-4da4-a7e5-78bcd3be3ddf",
+                                        "state": "Ongoing",
+                                        "begin": 1743764859864,
+                                        "end": 1743764865636,
+                                        "duration": 5772
+                                    }
+                                ],
+                                "filesExt": [
+                                    "",
+                                    ".html"
+                                ]
+                            },
+                            "actionType": "Idle"
+                        }
+                    ]
                 }
             ]
         }
